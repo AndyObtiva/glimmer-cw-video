@@ -1,0 +1,6 @@
+# Launches all samples
+export DIR=`echo $0 | sed "s/launch//"`
+glimmer \
+  "${DIR}hello_looped_video_with_black_background.rb" \
+  "${DIR}hello_video.rb" \
+  "${DIR}hello_video_observers.rb" \
