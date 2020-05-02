@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "glimmer-cw-video"
   gem.homepage = "http://github.com/AndyObtiva/glimmer-cw-video"
   gem.license = "MIT"
-  gem.summary = %Q{Glimmer video widget}
+  gem.summary = %Q{Glimmer Custom Widget - Video}
   gem.description = %Q{Glimmer video widget with basic functionality like play, pause, loop, and reload. Support mp4, webm, and ogg. Works with both local files and web URLs.}
   gem.email = "andy.am@gmail.com"
   gem.authors = ["Andy Maleh"]
