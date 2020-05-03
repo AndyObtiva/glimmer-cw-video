@@ -6,11 +6,13 @@ Glimmer custom widget for video used via `video` keyword.
 
 ## Pre-requisites
 
-- [Glimmer](https://github.com/AndyObtiva/glimmer) application
+- [Glimmer](https://github.com/AndyObtiva/glimmer) application, [Glimmer](https://github.com/AndyObtiva/glimmer) custom shell, or another [Glimmer](https://github.com/AndyObtiva/glimmer) custom widget
 - JRuby version required by Glimmer
 - Java version required by Glimmer
 
 ## Setup
+
+### Glimmer Application
 
 Add the following to a Glimmer application `Gemfile`:
 
@@ -25,6 +27,16 @@ jruby -S bundle
 ```
 
 (or just `bundle` if using RVM)
+
+### Glimmer Custom Shell or Glimmer Custom Widget
+
+When reusing video custom widget in a Glimmer custom shell or custom widget, you can follow the same steps for Glimmer application, and then add a require statement to your library file after `glimmer` and before additional library require statements:
+
+```ruby
+require 'glimmer'
+require 'glimmer-cw-video'
+# ... more require statements follow
+```
 
 ## Options 
 
