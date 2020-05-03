@@ -1,4 +1,5 @@
 # Video 0.1.0 - Glimmer Custom Widget
+[![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 
 ![Video Widget](images/glimmer-video-widget.png)
 
