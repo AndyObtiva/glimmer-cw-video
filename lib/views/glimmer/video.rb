@@ -6,14 +6,14 @@ module Glimmer
     include_package 'org.eclipse.swt.browser'
 
     options :file, :url
-    option :autoplay, true
-    option :controls, true
-    option :looped, false
-    option :background, :white
-    option :fit_to_width, true
-    option :fit_to_height, true
-    option :offset_x, 0
-    option :offset_y, 0
+    option :autoplay, default: true
+    option :controls, default: true
+    option :looped, default: false
+    option :background, default: :white
+    option :fit_to_width, default: true
+    option :fit_to_height, default: true
+    option :offset_x, default: 0
+    option :offset_y, default: 0
 
     alias autoplay? autoplay
     alias controls? controls

@@ -1,4 +1,4 @@
-# Video 0.1.0 - Glimmer Custom Widget
+# Video 0.1.1 - Glimmer Custom Widget
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 
 ![Video Widget](images/glimmer-video-widget.png)
@@ -18,7 +18,7 @@ Glimmer custom widget for video used via `video` keyword.
 Add the following to a Glimmer application `Gemfile`:
 
 ```ruby
-gem 'glimmer-cw-video', '0.1.0'
+gem 'glimmer-cw-video', '0.1.1'
 ```
 
 Run:
@@ -121,6 +121,11 @@ end
 }
 @shell.open
 ```
+
+## Change Log
+
+- 0.1.1: Upgraded to Glimmer 0.8.0 with a relaxed version requirement
+- 0.1.0: Initial version
 
 ## Contributing to glimmer-cw-video
  
