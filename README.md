@@ -5,6 +5,12 @@
 
 Glimmer custom widget for video used via `video` keyword.
 
+## Platforms
+
+This has been tested and confirmed to be working on:
+- Mac
+- Windows
+
 ## Pre-requisites
 
 - [Glimmer](https://github.com/AndyObtiva/glimmer) application, [Glimmer](https://github.com/AndyObtiva/glimmer) custom shell, or another [Glimmer](https://github.com/AndyObtiva/glimmer) custom widget
