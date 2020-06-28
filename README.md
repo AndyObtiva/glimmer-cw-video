@@ -1,9 +1,10 @@
-# Video 0.1.1 - Glimmer Custom Widget
+# Video 0.1.1
+## [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 
 ![Video Widget](images/glimmer-video-widget.png)
 
-Glimmer custom widget for video used via `video` keyword.
+Video is a [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem) for playing videos via the `video` [Glimmer DSL](https://github.com/AndyObtiva/glimmer#glimmer-dsl-syntax) keyword.
 
 ## Platforms
 
