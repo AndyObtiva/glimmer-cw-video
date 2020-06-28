@@ -48,7 +48,7 @@ require 'glimmer-cw-video'
 
 ## Options 
 
-Passed in an options hash as arguments to `video` widget:
+Here are the options to pass in as hash arguments to the `video` widget keyword (see in [Examples](#examples)):
 - `autoplay` (true [default] or false): plays video automatically as soon as loaded
 - `controls` (true [default] or false): displays controls
 - `looped` (true or false [default]): plays video in looped mode
@@ -71,7 +71,7 @@ Passed in an options hash as arguments to `video` widget:
 - `#paused?`: returns true when video is not playing
 - `#ended?`: returns true when video has reached the end (position == duration)
 
-## Observer Events:
+## Observer Events (see in [Examples](#examples)):
 
 - `on_loaded`: invoked when video `#loaded?` becomes true
 - `on_ended`: invoked when video `#ended?` becomes true
