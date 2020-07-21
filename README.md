@@ -1,6 +1,10 @@
 # Video 0.1.2
 ## [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
+[![Travis CI](https://travis-ci.com/AndyObtiva/glimmer-cw-video.svg?branch=master)](https://travis-ci.com/github/AndyObtiva/glimmer-cw-video)
+[![Coverage Status](https://coveralls.io/repos/github/AndyObtiva/glimmer-cw-video/badge.svg?branch=master)](https://coveralls.io/github/AndyObtiva/glimmer-cw-video?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b46ff4b09463b86aa7aa/maintainability)](https://codeclimate.com/github/AndyObtiva/glimmer-cw-video/maintainability)
+[![Join the chat at https://gitter.im/AndyObtiva/glimmer](https://badges.gitter.im/AndyObtiva/glimmer.svg)](https://gitter.im/AndyObtiva/glimmer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![Video Widget](images/glimmer-video-widget.png)
 
@@ -38,10 +42,9 @@ jruby -S bundle
 
 ### Glimmer Custom Shell or Glimmer Custom Widget
 
-When reusing video custom widget in a Glimmer custom shell or custom widget, you can follow the same steps for Glimmer application, and then add a require statement to your library file after `glimmer` and before additional library require statements:
+When reusing video custom widget in a Glimmer custom shell or custom widget, you can follow the same steps for Glimmer application, and then add a require statement to your library file:
 
 ```ruby
-require 'glimmer'
 require 'glimmer-cw-video'
 # ... more require statements follow
 ```
@@ -147,5 +150,9 @@ end
 
 ## Copyright
 
-Copyright (c) 2020 Andy Maleh. See LICENSE.txt for
+Copyright (c) 2020 - Andy Maleh. See [LICENSE.txt](LICENSE.txt) for
 further details.
+
+--
+
+[<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Built for Glimmer](https://github.com/AndyObtiva/glimmer) (Ruby Desktop Development GUI Library).

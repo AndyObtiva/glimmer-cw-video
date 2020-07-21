@@ -11,6 +11,8 @@ gem 'glimmer-dsl-css', '>= 0.1.0', '< 2.0.0'
 group :development do
   gem 'rspec', '~> 3.5.0'
   gem 'jeweler', '2.3.9'
-  gem 'simplecov', '>= 0'
-  gem 'glimmer-cs-gladiator', '~> 0.1.7'
+  gem 'glimmer-cs-gladiator'
+  gem 'coveralls', '= 0.8.23', require: false
+  gem 'simplecov', '~> 0.16.1', require: nil
+  gem 'simplecov-lcov', '~> 0.7.0', require: nil  
 end
