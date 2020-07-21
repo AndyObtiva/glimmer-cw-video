@@ -1,4 +1,4 @@
-# Video 0.1.1
+# Video 0.1.2
 ## [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 
@@ -25,7 +25,7 @@ This has been tested and confirmed to be working on:
 Add the following to a Glimmer application `Gemfile`:
 
 ```ruby
-gem 'glimmer-cw-video', '0.1.1'
+gem 'glimmer-cw-video', '0.1.2'
 ```
 
 Run:
@@ -131,6 +131,7 @@ end
 
 ## Change Log
 
+- 0.1.2: Upgraded to the glimmer-dsl-swt 0.4.1, glimmer-dsl-xml 0.1.0, and glimmer-dsl-css 0.1.0
 - 0.1.1: Upgraded to Glimmer 0.8.0 with a relaxed version requirement
 - 0.1.0: Initial version
 

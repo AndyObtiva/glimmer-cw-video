@@ -34,7 +34,7 @@ RSpec.configure do |config|
     @target.dispose if @target && @target.respond_to?(:dispose)
     Glimmer::DSL::Engine.reset
   end
-
+  config.fail_fast = true
 end
 
 require 'glimmer/rake_task'
