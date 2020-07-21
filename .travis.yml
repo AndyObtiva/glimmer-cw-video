@@ -13,7 +13,7 @@ jobs:
         - chmod +x ./cc-test-reporter
         - ./cc-test-reporter before-build
       script:
-        - bundle exec rspec
+        - bundle exec rake
       after_script:
         - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
         - ruby -e "$(curl -s https://undercover-ci.com/uploader.rb)" -- --repo AndyObtiva/glimmer-cw-video --commit $TRAVIS_COMMIT --lcov coverage/lcov/glimmer-cw-video.lcov
