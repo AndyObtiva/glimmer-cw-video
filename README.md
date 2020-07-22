@@ -1,5 +1,5 @@
 # Video 0.1.2
-## [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
+## [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 [![Travis CI](https://travis-ci.com/AndyObtiva/glimmer-cw-video.svg?branch=master)](https://travis-ci.com/github/AndyObtiva/glimmer-cw-video)
 [![Coverage Status](https://coveralls.io/repos/github/AndyObtiva/glimmer-cw-video/badge.svg?branch=master)](https://coveralls.io/github/AndyObtiva/glimmer-cw-video?branch=master)
