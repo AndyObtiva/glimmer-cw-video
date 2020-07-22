@@ -150,8 +150,9 @@ end
 
 ## Copyright
 
-Copyright (c) 2020 - Andy Maleh. See [LICENSE.txt](LICENSE.txt) for
-further details.
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2020 - Andy Maleh. See [LICENSE.txt](LICENSE.txt) for further details.
 
 --
 
