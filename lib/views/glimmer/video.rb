@@ -141,6 +141,7 @@ module Glimmer
 
     def can_handle_observation_request?(observation_request)
       result = false
+      observation_request = observation_request.to_s
       if observation_request.start_with?('on_')
         attribute = observation_request.sub(/^on_/, '')
         result = OBSERVED_ATTRIBUTE_TO_PROPERTY_MAPPING.keys.include?(attribute)
@@ -149,6 +150,7 @@ module Glimmer
     end
 
     def handle_observation_request(observation_request, &block)
+      observation_request = observation_request.to_s
       if observation_request.start_with?('on_')
         attribute = observation_request.sub(/^on_/, '')
         if attribute == 'loaded' && !@completed
