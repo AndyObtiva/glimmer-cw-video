@@ -1,4 +1,4 @@
-require_relative '../lib/glimmer-cw-video'
+require_relative '../../lib/glimmer-cw-video'
 
 include Glimmer
 

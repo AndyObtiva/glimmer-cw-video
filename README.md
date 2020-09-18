@@ -81,9 +81,24 @@ Here are the options to pass in as hash arguments to the `video` widget keyword 
 - `on_playing`: invoked when video `#playing?` becomes true
 - `on_paused`: invoked when video `#paused?` becomes true
 
-## Examples:
+## Samples:
 
-Example ([samples/hello_video.rb](samples/video/hello_video.rb)):
+Run this command to list available Video samples:
+
+```
+glimmer sample:list
+```
+
+### Hello, Video! 
+
+Run:
+
+```
+glimmer sample:run[hello_video]
+```
+
+
+Glimmer Code (from [samples/video/hello_video.rb](samples/video/hello_video.rb)):
 
 ```ruby
 # ...
@@ -92,7 +107,15 @@ shell {
 }.open
 ```
 
-Example ([samples/hello_looped_video_with_black_background.rb](samples/video/hello_looped_video_with_black_background.rb)):
+### Hello, Looped Video with Black Background!
+
+Run:
+
+```
+glimmer sample:run[hello_looped_video_with_black_background]
+```
+
+Glimmer Code (from [samples/video/hello_looped_video_with_black_background.rb](samples/video/hello_looped_video_with_black_background.rb)):
 
 ```ruby
 # ...
@@ -102,7 +125,15 @@ shell {
 }.open
 ```
 
-Example ([samples/hello_video_observers.rb](samples/video/hello_video_observers.rb)):
+### Hello, Video Observers!
+
+Run:
+
+```
+glimmer sample:run[hello_video_observers]
+```
+
+Glimmer Code (from [samples/video/hello_video_observers.rb](samples/video/hello_video_observers.rb)):
 
 ```ruby
 # ...
@@ -132,12 +163,13 @@ end
 @shell.open
 ```
 
+## TODO
+
+[TODO.md](TODO.md)
+
 ## Change Log
 
-- 0.1.3: Fixed an issue with hooking widget observers via symbol instead of a string
-- 0.1.2: Upgraded to the glimmer-dsl-swt 0.4.1, glimmer-dsl-xml 0.1.0, and glimmer-dsl-css 0.1.0
-- 0.1.1: Upgraded to Glimmer 0.8.0 with a relaxed version requirement
-- 0.1.0: Initial version
+[CHANGELOG.md](CHANGELOG.md)
 
 ## Contributing to glimmer-cw-video
  

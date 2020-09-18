@@ -22,7 +22,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Glimmer video widget with basic functionality like play, pause, loop, and reload. Support mp4, webm, and ogg. Works with both local files and web URLs.}
   gem.email = "andy.am@gmail.com"
   gem.authors = ["Andy Maleh"]
-  gem.files = Dir['lib/**/*.rb']
+  gem.files = Dir['README.md', 'LICENSE.txt', 'VERSION', 'CHANGELOG.md', 'CONTRIBUTING.md', 'lib/**/*', 'samples/**/*']
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
