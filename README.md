@@ -97,7 +97,6 @@ Run:
 glimmer sample:run[hello_video]
 ```
 
-
 Glimmer Code (from [samples/video/hello_video.rb](samples/video/hello_video.rb)):
 
 ```ruby
@@ -106,6 +105,10 @@ shell {
   video(file: video_file)
 }.open
 ```
+
+Glimmer App:
+
+![glimmer cw video hello video](images/glimmer-cw-video-hello-video.png)
 
 ### Hello, Looped Video with Black Background!
 
@@ -124,6 +127,10 @@ shell {
   video(file: video_file, looped: true, background: :black)
 }.open
 ```
+
+Glimmer App:
+
+![glimmer cw video hello video](images/glimmer-video-widget.png)
 
 ### Hello, Video Observers!
 
@@ -162,6 +169,10 @@ end
 }
 @shell.open
 ```
+
+Glimmer App:
+
+![glimmer cw video hello video observers](images/glimmer-cw-video-hello-video-observers.png)
 
 ## TODO
 
