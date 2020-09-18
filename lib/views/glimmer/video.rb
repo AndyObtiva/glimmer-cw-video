@@ -20,6 +20,11 @@ module Glimmer
     alias looped? looped
     alias fit_to_width? fit_to_width
     alias fit_to_height? fit_to_height
+    
+    before_body {
+      file_source = file
+      raise "Video file does not exist: #{file_source}" if file_source && !file_source.start_with?('uri:classloader') && !File.exist?(File.expand_path(file_source))
+    }
 
     body {
       browser(:no_scroll) {
@@ -66,7 +71,7 @@ module Glimmer
       }
     }
 
-    def source
+    def source   
       file_source = file
       if file_source
         if file_source.start_with?('uri:classloader')
@@ -81,6 +86,7 @@ module Glimmer
           File.binwrite(tmp_file, file_content)
           "file://#{tmp_file}"
         else
+          file_source = File.expand_path(file_source)          
           "file://#{file_source}"
         end
       else
@@ -104,6 +110,10 @@ module Glimmer
 
     def pause
       video_action('pause')
+    end
+    
+    def toggle
+      paused? ? play : pause
     end
 
     def reload
@@ -132,11 +142,39 @@ module Glimmer
     end
 
     def position=(new_position)
+      new_position = [new_position, 0].max
+      new_position = [new_position, duration].min
       video_attribute_set('currentTime', new_position)
+    end
+    
+    def fast_forward(seconds=15)
+      self.position += seconds
+    end
+
+    def rewind(seconds=15)
+      self.position -= seconds
     end
 
     def duration
       video_attribute('duration')
+    end
+    
+    def volume
+      video_attribute('volume')
+    end
+
+    def volume=(value)
+      value = [value, 0].max
+      value = [value, 1].min
+      video_attribute_set('volume', value)
+    end
+    
+    def volume_up(value=0.05)
+      self.volume += value
+    end
+
+    def volume_down(value=0.05)
+      self.volume -= value
     end
 
     def can_handle_observation_request?(observation_request)
@@ -162,7 +200,7 @@ module Glimmer
         end
       end
     end
-
+    
     private
 
     class VideoObserverBrowserFunction < BrowserFunction

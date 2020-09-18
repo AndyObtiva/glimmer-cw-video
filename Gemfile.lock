@@ -3,7 +3,7 @@ PATH
   specs:
     glimmer-cw-video (1.0.0)
       glimmer-dsl-css (>= 1.0.0, < 2.0.0)
-      glimmer-dsl-swt (>= 4.1.7.0.0, < 5.0.0.0.0)
+      glimmer-dsl-swt (>= 4.17.0.0, < 5.0.0.0)
       glimmer-dsl-xml (>= 1.0.0, < 2.0.0)
 
 GEM

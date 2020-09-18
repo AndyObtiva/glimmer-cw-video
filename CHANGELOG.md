@@ -4,6 +4,11 @@
 
 - Upgraded to Glimmer DSL for SWT 4.17.0.0
 - Made samples available via the `glimmer` command (e.g. glimmer sample:run[hello_video])
+- `#toggle` method for video play/pause action (plays if paused and pauses if playing)
+- Handle non-absolute files
+- Validate video file and raise error if invalid
+- Fast-Forward & Rewind
+- Volume get, set, up, and down
 
 ## 0.1.3
 

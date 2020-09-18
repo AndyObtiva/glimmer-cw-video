@@ -13,8 +13,8 @@ module GlimmerSpec
         timeout_duration = 6
         sleep(timeout_duration)
         async_exec {
+          @fail = "Time out after #{timeout_duration} seconds!"
           @target&.dispose
-          fail("Time out after #{timeout_duration} seconds!")
         }
       }
     end
@@ -25,13 +25,14 @@ module GlimmerSpec
       end
       @timeout.kill
       ENV['temp'] = @original_temp
+      fail(@fail) if @fail
     end
 
     let(:video_file) { File.join(FIXTURES_PATH, 'videos/Pepa-creativeCommonsMp4956_512kb.mp4') }
     let(:video_url) { "http://www.youtube.com/fdajiew" }
     let(:video_url_truncated) { "www.youtube.com/fdajiew" }
 
-    it "initializes video source by file option argument" do
+    it "initializes video source by file option argument (absolute path)" do
       @target.content {
         @video = video(file: video_file) {
           on_completed {
@@ -41,6 +42,32 @@ module GlimmerSpec
         }
       }
       expect(@video.source).to eq("file://#{video_file}")
+    end
+
+    it "initializes video source by file option argument (relative path)" do
+      @target.content {
+        @video = video(file: "spec/fixtures/videos/#{File.basename(video_file)}") {
+          on_completed {
+            expect(@video.swt_widget.evaluate("return document.getElementById('video').src")).to eq("file://#{video_file}")
+            @target.dispose
+          }
+        }
+      }
+      expect(@video.source).to eq("file://#{video_file}")
+    end
+
+    it "raises error if file does not exist" do
+      @target.content {
+        expect {
+          @video = video(file: 'invalid') {
+            on_completed {
+              expect(@video.swt_widget.evaluate("return document.getElementById('video').src")).to eq("file://#{video_file}")
+              @target.dispose
+            }
+          }
+        }.to raise_error('Video file does not exist: invalid')
+      }
+      @target.dispose
     end
 
     it "initializes video source by url option argument" do
@@ -298,6 +325,26 @@ module GlimmerSpec
         }
       }
     end
+    
+    it 'toggles video play/pause action manually' do
+      @target.content {
+        @video = video(file: video_file, autoplay: false) {
+          on_completed {
+            expect(@video.playing?).to eq(false)
+            expect(@video.paused?).to eq(true)
+            @video.toggle
+            expect(@video.swt_widget.evaluate("return document.getElementById('video').paused")).to eq(false)
+            expect(@video.playing?).to eq(true)
+            expect(@video.paused?).to eq(false)
+            @video.toggle
+            expect(@video.playing?).to eq(false)
+            expect(@video.paused?).to eq(true)
+            expect(@video.swt_widget.evaluate("return document.getElementById('video').paused")).to eq(true)
+            @target.dispose
+          }
+        }
+      }
+    end    
 
     it 'sets offset_x to 0 by default' do
       @target.content {
@@ -406,10 +453,61 @@ module GlimmerSpec
           on_completed {
             @video.position = @video.duration
             expect(@video.ended?).to be(true)
+            @video.position = -1
+            expect(@video.position).to eq(0)
+            @video.position = @video.duration + 1
+            expect(@video.position).to eq(@video.duration)
             @target.dispose
           }
         }
       }
     end
+
+    it 'rewinds and fast forwards' do
+      @target.content {
+        @video = video(file: video_file, autoplay: false) {
+          on_completed {
+              @video.fast_forward(0.01)
+              expect(@video.position).to eq(0.01)
+              @video.rewind(0.01)
+              expect(@video.position).to eq(0)
+              @target.dispose
+          }
+        }
+      }
+    end
+    
+    it 'changes volume' do
+      @target.content {
+        @video = video(file: video_file) {
+          on_completed {
+            @video.volume = 0.5
+            expect(@video.volume).to eq(0.5)
+            @video.volume = -1
+            expect(@video.volume).to eq(0)
+            @video.volume = 1.1
+            expect(@video.volume).to eq(1)
+            @target.dispose
+          }
+        }
+      }
+    end
+
+    it 'bumps volume up and volumne down' do
+      @target.content {
+        @video = video(file: video_file) {
+          on_completed {
+            @video.volume = 1
+            @video.volume_down(0.3)
+            expect(@video.volume).to eq(0.7)
+            @video.volume_up(0.3)
+            expect(@video.volume).to eq(1)
+            @target.dispose
+          }
+        }
+      }
+    end
+
   end
+  
 end
