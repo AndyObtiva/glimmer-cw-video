@@ -507,6 +507,27 @@ module GlimmerSpec
         }
       }
     end
+    
+    it 'mutes/unmutes video volume' do
+      @target.content {
+        @video = video(file: video_file) {
+          on_completed {
+            @video.volume = 0.5
+            expect(@video.muted?).to be_falsey
+            @video.mute
+            expect(@video.muted?).to eq(true)
+            @video.unmute
+            expect(@video.muted?).to eq(false)
+            @target.dispose
+          }
+        }
+      }
+    end
+
+    it 'toggles muted'
+    
+    it 'starts video muted by default' 
+    
 
   end
   

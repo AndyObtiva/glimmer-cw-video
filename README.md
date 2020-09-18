@@ -1,4 +1,4 @@
-# Video 0.1.3
+# Video 1.0.0
 ## [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 [![Travis CI](https://travis-ci.com/AndyObtiva/glimmer-cw-video.svg?branch=master)](https://travis-ci.com/github/AndyObtiva/glimmer-cw-video)
@@ -29,7 +29,7 @@ This has been tested and confirmed to be working on:
 Add the following to a Glimmer application `Gemfile`:
 
 ```ruby
-gem 'glimmer-cw-video', '0.1.3'
+gem 'glimmer-cw-video', '1.0.0'
 ```
 
 Run:
@@ -144,18 +144,25 @@ Glimmer Code (from [samples/video/hello_video_observers.rb](samples/video/hello_
 
 ```ruby
 # ...
+video_file = File.expand_path('../videos/Ants.mp4', __FILE__)
+
 def display_video_status(video, status)
-  message_box = MessageBox.new(video.swt_widget.getShell)
-  message_box.setText(status)
-  message = "Video Position: #{video.position} seconds\n"
-  message += "Video Duration: #{video.duration} seconds"
-  message_box.setMessage(message)
-  message_box.open
+  message_box {
+    text status
+    message "#{video.position.round(2)}/#{video.duration.round(2)} seconds have elapsed."
+  }.open
 end
 
 @shell = shell {
   minimum_size 800, 500
   @video = video(file: video_file, background: :black) {
+    on_swt_show { |event|
+      # set focus as soon as the SWT widget is shown to grab keyboard events below
+      @video.set_focus
+    }
+    on_key_pressed { |event|
+      @video.toggle if event.keyCode == swt(:space) || event.keyCode == swt(:cr)
+    }   
     on_playing {
       display_video_status(@video, 'Playing')
     }

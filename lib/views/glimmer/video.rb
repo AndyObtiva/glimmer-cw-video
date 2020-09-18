@@ -176,6 +176,18 @@ module Glimmer
     def volume_down(value=0.05)
       self.volume -= value
     end
+    
+    def mute
+      video_attribute_set('muted', true)
+    end
+    
+    def unmute
+      video_attribute_set('muted', false)
+    end
+    
+    def muted?
+      video_attribute('muted')
+    end
 
     def can_handle_observation_request?(observation_request)
       result = false
