@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Andy Maleh".freeze]
-  s.date = "2020-09-18"
+  s.date = "2020-09-19"
   s.description = "Glimmer video widget with basic functionality like play, pause, loop, and reload. Support mp4, webm, and ogg. Works with both local files and web URLs.".freeze
   s.email = "andy.am@gmail.com".freeze
   s.extra_rdoc_files = [
