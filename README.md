@@ -51,7 +51,7 @@ require 'glimmer-cw-video'
 
 ## API Options 
 
-Here are the options to pass in as hash arguments to the `video` widget keyword (see in [Examples](#examples)):
+Here are the options to pass in as hash arguments to the `video` widget keyword (see in [Samples](#samples)):
 - `autoplay` (true [default] or false): plays video automatically as soon as loaded
 - `controls` (true [default] or false): displays controls
 - `looped` (true or false [default]): plays video in looped mode
@@ -84,14 +84,16 @@ Here are the options to pass in as hash arguments to the `video` widget keyword 
 - `#toggle_muted`: mutes/unmutes video depending on `muted?` attribute
 
 
-## API Observer Events (see in [Examples](#examples)):
+## API Observer Events
+
+(see in [Samples](#samples))
 
 - `on_loaded`: invoked when video `#loaded?` becomes true
 - `on_ended`: invoked when video `#ended?` becomes true
 - `on_playing`: invoked when video `#playing?` becomes true
 - `on_paused`: invoked when video `#paused?` becomes true
 
-## Samples:
+## Samples
 
 Run this command to list available Video samples:
 
@@ -140,7 +142,7 @@ shell {
 
 Glimmer App:
 
-![glimmer cw video hello video](images/glimmer-video-widget.png)
+![glimmer cw video hello video](images/glimmer-cw-video-hello-looped-video-with-black-background.png)
 
 ### Hello, Video Observers!
 
