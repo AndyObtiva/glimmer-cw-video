@@ -9,7 +9,7 @@
 - Validate video file and raise error if invalid
 - Fast-Forward & Rewind
 - Volume get, set, up, and down
-- mute, unmute, and muted?
+- mute, unmute, muted?, and toggle_muted
 
 ## 0.1.3
 

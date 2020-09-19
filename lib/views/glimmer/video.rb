@@ -25,7 +25,7 @@ module Glimmer
       file_source = file
       raise "Video file does not exist: #{file_source}" if file_source && !file_source.start_with?('uri:classloader') && !File.exist?(File.expand_path(file_source))
     }
-
+    
     body {
       browser(:no_scroll) {
         text html {
@@ -187,6 +187,10 @@ module Glimmer
     
     def muted?
       video_attribute('muted')
+    end
+    
+    def toggle_muted
+      muted? ? unmute : mute
     end
 
     def can_handle_observation_request?(observation_request)

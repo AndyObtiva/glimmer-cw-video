@@ -18,15 +18,30 @@ end
       # set focus as soon as the SWT widget is shown to grab keyboard events below
       @video.set_focus
     }
+    
     on_key_pressed { |event|
-      @video.toggle if event.keyCode == swt(:space) || event.keyCode == swt(:cr)
+      case event.keyCode
+      when swt(:space), swt(:cr)
+        @video.toggle
+      when swt(:arrow_left)
+        @video.rewind
+      when swt(:arrow_right)
+        @video.fast_forward
+      when swt(:arrow_up)
+        @video.volume_up
+      when swt(:arrow_down)
+        @video.volume_down
+      end
     }   
+    
     on_playing {
       display_video_status(@video, 'Playing')
     }
+    
     on_paused {
       display_video_status(@video, 'Paused')
     }
+    
     on_ended {
       display_video_status(@video, 'Ended')
     }

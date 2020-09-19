@@ -49,7 +49,7 @@ require 'glimmer-cw-video'
 # ... more require statements follow
 ```
 
-## Options 
+## API Options 
 
 Here are the options to pass in as hash arguments to the `video` widget keyword (see in [Examples](#examples)):
 - `autoplay` (true [default] or false): plays video automatically as soon as loaded
@@ -61,10 +61,11 @@ Here are the options to pass in as hash arguments to the `video` widget keyword 
 - `offset_x` (integer [default: 0]): offset from left border. Could be a negative number if you want to show only an area of the video. Useful when fit_to_width is false to pick an area of the video to display.
 - `offset_y` (integer [default: 0]): offset from top border. Could be a negative number if you want to show only an area of the video. Useful when fit_to_height is false to pick an area of the video to display.
 
-## Methods
+## API Methods
 
 - `#play`: plays video
 - `#pause`: pauses video
+- `#toggle`: toggles video playback, playing if paused, and pausing if playing.
 - `#reload`: reloads video restarting from beginning
 - `#position`: position in seconds (and fractions)
 - `#position=`: seeks a new position in video
@@ -73,8 +74,17 @@ Here are the options to pass in as hash arguments to the `video` widget keyword 
 - `#playing?`: returns true when video is actively playing
 - `#paused?`: returns true when video is not playing
 - `#ended?`: returns true when video has reached the end (position == duration)
+- `#volume`: returns video volume (0.0 - 1.0 float value)
+- `#volume=`: sets video volume (0.0 - 1.0 float value)
+- `#volume_up(value=0.05)`: bumps video volume up by a specified value or default
+- `#volume_down(value=0.05)`: bumps video volume down by a specified value or default
+- `#mute`: mutes video
+- `#unmute`: unmutes video
+- `#muted?`: returns true if video is muted
+- `#toggle_muted`: mutes/unmutes video depending on `muted?` attribute
 
-## Observer Events (see in [Examples](#examples)):
+
+## API Observer Events (see in [Examples](#examples)):
 
 - `on_loaded`: invoked when video `#loaded?` becomes true
 - `on_ended`: invoked when video `#ended?` becomes true
@@ -144,6 +154,10 @@ Glimmer Code (from [samples/video/hello_video_observers.rb](samples/video/hello_
 
 ```ruby
 # ...
+require_relative '../../lib/glimmer-cw-video'
+
+include Glimmer
+
 video_file = File.expand_path('../videos/Ants.mp4', __FILE__)
 
 def display_video_status(video, status)
@@ -160,15 +174,30 @@ end
       # set focus as soon as the SWT widget is shown to grab keyboard events below
       @video.set_focus
     }
+    
     on_key_pressed { |event|
-      @video.toggle if event.keyCode == swt(:space) || event.keyCode == swt(:cr)
+      case event.keyCode
+      when swt(:space), swt(:cr)
+        @video.toggle
+      when swt(:arrow_left)
+        @video.rewind
+      when swt(:arrow_right)
+        @video.fast_forward
+      when swt(:arrow_up)
+        @video.volume_up
+      when swt(:arrow_down)
+        @video.volume_down
+      end
     }   
+    
     on_playing {
       display_video_status(@video, 'Playing')
     }
+    
     on_paused {
       display_video_status(@video, 'Paused')
     }
+    
     on_ended {
       display_video_status(@video, 'Ended')
     }
