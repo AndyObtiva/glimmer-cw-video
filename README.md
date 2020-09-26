@@ -1,4 +1,4 @@
-# Video 1.0.0
+# Video 1.1.0
 ## [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 [![Travis CI](https://travis-ci.com/AndyObtiva/glimmer-cw-video.svg?branch=master)](https://travis-ci.com/github/AndyObtiva/glimmer-cw-video)
@@ -15,12 +15,14 @@ Video is a [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-
 This has been tested and confirmed to be working on:
 - Mac
 - Windows
+- Linux
 
 ## Pre-requisites
 
 - [Glimmer](https://github.com/AndyObtiva/glimmer) application, [Glimmer](https://github.com/AndyObtiva/glimmer) custom shell, or another [Glimmer](https://github.com/AndyObtiva/glimmer) custom widget
 - JRuby version required by Glimmer
 - Java version required by Glimmer
+- Bundler-Download Plugin (only for Linux)
 
 ## Setup
 
@@ -29,7 +31,7 @@ This has been tested and confirmed to be working on:
 Add the following to a Glimmer application `Gemfile`:
 
 ```ruby
-gem 'glimmer-cw-video', '1.0.0'
+gem 'glimmer-cw-video', '1.1.0'
 ```
 
 Run:

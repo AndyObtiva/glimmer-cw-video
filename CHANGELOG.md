@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.0
+
+- Linux support, finally! (Auto-use Chromium for Linux)
+
 ## 1.0.0
 
 - Upgraded to Glimmer DSL for SWT 4.17.0.0

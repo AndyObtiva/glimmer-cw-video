@@ -24,10 +24,13 @@ module Glimmer
     before_body {
       file_source = file
       raise "Video file does not exist: #{file_source}" if file_source && !file_source.start_with?('uri:classloader') && !File.exist?(File.expand_path(file_source))
+      
+      @swt_style |= swt(:no_scroll)
+      @swt_style |= swt(:chromium) if OS.linux? 
     }
     
     body {
-      browser(:no_scroll) {
+      browser(swt_style) {
         text html {
           head {
             style(id: "style") {
