@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.0
+
+- Upgraded glimmer-dsl-swt, glimmer-dsl-xml, and glimmer-dsl-css
+- Fix issue with failing to configure samples for glimmer-dsl-swt since it does not support sample configuration anymore because it became automatic
+
 ## 1.0.0
 
 - Upgraded to Glimmer DSL for SWT 4.17.0.0

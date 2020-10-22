@@ -4,11 +4,13 @@ source 'https://rubygems.org'
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-gem 'glimmer-dsl-swt', '>= 4.17.0.0', '< 5.0.0.0'
-gem 'glimmer-dsl-xml', '>= 1.0.0', '< 2.0.0'
-gem 'glimmer-dsl-css', '>= 1.0.0', '< 2.0.0'
+gem 'glimmer-dsl-swt', '>= 4.17.4.1', '< 5.0.0.0'
+gem 'glimmer-dsl-xml', '>= 1.1.0', '< 2.0.0'
+gem 'glimmer-dsl-css', '>= 1.1.0', '< 2.0.0'
 
 group :development do
+  gem 'juwelier', '~> 2.4.9'
+  gem 'glimmer-cs-gladiator'
   gem 'rspec', '~> 3.5.0'
   gem 'jeweler', '2.3.9'
 #  gem 'glimmer-cs-gladiator'

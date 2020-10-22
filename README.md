@@ -1,4 +1,4 @@
-# Video 1.0.0
+# Video 1.1.0
 ## [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=40 /> Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem)
 [![Gem Version](https://badge.fury.io/rb/glimmer-cw-video.svg)](http://badge.fury.io/rb/glimmer-cw-video)
 [![Travis CI](https://travis-ci.com/AndyObtiva/glimmer-cw-video.svg?branch=master)](https://travis-ci.com/github/AndyObtiva/glimmer-cw-video)
@@ -29,7 +29,7 @@ This has been tested and confirmed to be working on:
 Add the following to a Glimmer application `Gemfile`:
 
 ```ruby
-gem 'glimmer-cw-video', '1.0.0'
+gem 'glimmer-cw-video', '1.1.0'
 ```
 
 Run:
@@ -112,8 +112,16 @@ glimmer sample:run[hello_video]
 Glimmer Code (from [samples/video/hello_video.rb](samples/video/hello_video.rb)):
 
 ```ruby
-# ...
+require_relative '../../lib/glimmer-cw-video'
+
+include Glimmer
+
+video_file = File.expand_path('../videos/Clouds_passing_by_CCBY_NatureClip.mp4', __FILE__)
+
 shell {
+  text 'Hello, Video!'
+  minimum_size 384, 240
+  
   video(file: video_file)
 }.open
 ```
@@ -133,9 +141,16 @@ glimmer sample:run[hello_looped_video_with_black_background]
 Glimmer Code (from [samples/video/hello_looped_video_with_black_background.rb](samples/video/hello_looped_video_with_black_background.rb)):
 
 ```ruby
-# ...
+require_relative '../../lib/glimmer-cw-video'
+
+include Glimmer
+
+video_file = File.expand_path('../videos/Blackpool_Timelapse.mp4', __FILE__)
+
 shell {
+  text 'Hello, Looped Video with Black Background!'
   minimum_size 1024, 640
+
   video(file: video_file, looped: true, background: :black)
 }.open
 ```
@@ -155,7 +170,6 @@ glimmer sample:run[hello_video_observers]
 Glimmer Code (from [samples/video/hello_video_observers.rb](samples/video/hello_video_observers.rb)):
 
 ```ruby
-# ...
 require_relative '../../lib/glimmer-cw-video'
 
 include Glimmer
@@ -170,7 +184,9 @@ def display_video_status(video, status)
 end
 
 @shell = shell {
+  text 'Hello, Video Observers!'
   minimum_size 800, 500
+
   @video = video(file: video_file, background: :black) {
     on_swt_show { |event|
       # set focus as soon as the SWT widget is shown to grab keyboard events below
@@ -211,6 +227,18 @@ end
 Glimmer App:
 
 ![glimmer cw video hello video observers](images/glimmer-cw-video-hello-video-observers.png)
+
+Dialog for video playing event:
+
+![glimmer cw video hello video observers](images/glimmer-cw-video-hello-video-observers-playing-event.png)
+
+Dialog for video paused event:
+
+![glimmer cw video hello video observers](images/glimmer-cw-video-hello-video-observers-paused-event.png)
+
+Dialog for video ended event:
+
+![glimmer cw video hello video observers](images/glimmer-cw-video-hello-video-observers-ended-event.png)
 
 ## TODO
 

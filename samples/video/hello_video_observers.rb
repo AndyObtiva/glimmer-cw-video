@@ -12,7 +12,9 @@ def display_video_status(video, status)
 end
 
 @shell = shell {
+  text 'Hello, Video Observers!'
   minimum_size 800, 500
+
   @video = video(file: video_file, background: :black) {
     on_swt_show { |event|
       # set focus as soon as the SWT widget is shown to grab keyboard events below
