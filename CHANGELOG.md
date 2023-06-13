@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.1
+
+- Relaxed indirect dependency on glimmer through glimmer-dsl-xml by upgrading to a newer version (1.3.2)
+- Relaxed indirect dependency on glimmer through glimmer-dsl-css by upgrading to a newer version (1.2.2)
+- Fix issue with `Glimmer::Config.xml_attribute_underscore` in glimmer-dsl-xml by upgrading to a newer version (1.3.2)
+
 ## 1.1.0
 
 - Upgraded glimmer-dsl-swt, glimmer-dsl-xml, and glimmer-dsl-css

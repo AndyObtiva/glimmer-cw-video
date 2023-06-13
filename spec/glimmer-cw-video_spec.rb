@@ -5,6 +5,7 @@ module GlimmerSpec
     include Glimmer
 
     before do
+      @original_logger = Glimmer::Config.logger
       @original_temp = ENV['temp']
       @target = shell {
         alpha 0 # keep invisible while running specs
@@ -26,6 +27,7 @@ module GlimmerSpec
       @timeout.kill
       ENV['temp'] = @original_temp
       fail(@fail) if @fail
+      Glimmer::Config.logger = @original_logger
     end
 
     let(:video_file) { File.join(FIXTURES_PATH, 'videos/Pepa-creativeCommonsMp4956_512kb.mp4') }
@@ -57,15 +59,17 @@ module GlimmerSpec
     end
 
     it "raises error if file does not exist" do
+      Glimmer::Config.logger = stub('glimmer-logger')
+      allow(Glimmer::Config.logger).to receive(:info)
+      allow(Glimmer::Config.logger).to receive(:debug)
+      expect(Glimmer::Config.logger).to receive(:error)
       @target.content {
-        expect {
-          @video = video(file: 'invalid') {
-            on_completed {
-              expect(@video.swt_widget.evaluate("return document.getElementById('video').src")).to eq("file://#{video_file}")
-              @target.dispose
-            }
+        @video = video(file: 'invalid') {
+          on_completed {
+            expect(@video.swt_widget.evaluate("return document.getElementById('video').src")).to eq("file://#{video_file}")
+            @target.dispose
           }
-        }.to raise_error('Video file does not exist: invalid')
+        }
       }
       @target.dispose
     end
@@ -344,7 +348,7 @@ module GlimmerSpec
           }
         }
       }
-    end    
+    end
 
     it 'sets offset_x to 0 by default' do
       @target.content {

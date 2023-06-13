@@ -71,7 +71,7 @@ module Glimmer
       }
     }
 
-    def source   
+    def source
       file_source = file
       if file_source
         if file_source.start_with?('uri:classloader')
@@ -86,7 +86,7 @@ module Glimmer
           File.binwrite(tmp_file, file_content)
           "file://#{tmp_file}"
         else
-          file_source = File.expand_path(file_source)          
+          file_source = File.expand_path(file_source)
           "file://#{file_source}"
         end
       else
@@ -323,7 +323,7 @@ module Glimmer
 
     def browser_body_background
       color = background
-      if color.is_a?(Symbol) || color.is_a?(String)        
+      if color.is_a?(Symbol) || color.is_a?(String)
         color = color(color)
       end
       if color.respond_to?(:swt_color)

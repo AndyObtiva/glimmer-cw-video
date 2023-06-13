@@ -49,7 +49,7 @@ require 'glimmer-cw-video'
 # ... more require statements follow
 ```
 
-## API Options 
+## API Options
 
 Here are the options to pass in as hash arguments to the `video` widget keyword (see in [Samples](#samples)):
 - `autoplay` (true [default] or false): plays video automatically as soon as loaded
@@ -101,7 +101,7 @@ Run this command to list available Video samples:
 glimmer sample:list
 ```
 
-### Hello, Video! 
+### Hello, Video!
 
 Run:
 
@@ -206,7 +206,7 @@ end
       when swt(:arrow_down)
         @video.volume_down
       end
-    }   
+    }
     
     on_playing {
       display_video_status(@video, 'Playing')
@@ -262,7 +262,7 @@ Dialog for video ended event:
 
 [MIT](LICENSE.txt)
 
-Copyright (c) 2020 - Andy Maleh.
+Copyright (c) 2020-2023 - Andy Maleh.
 
 --
 
