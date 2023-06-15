@@ -10,6 +10,10 @@
 
 Video is a [Glimmer DSL for SWT Custom Widget](https://github.com/AndyObtiva/glimmer-dsl-swt/blob/master/docs/reference/GLIMMER_GUI_DSL_SYNTAX.md#custom-widgets) for playing videos via the `video` [Glimmer DSL](https://github.com/AndyObtiva/glimmer#glimmer-dsl-syntax) keyword.
 
+Featured in [Math Bowling 2](https://github.com/AndyObtiva/MathBowling)
+
+![Math Bowling 2](https://github.com/AndyObtiva/MathBowling/raw/master/MathBowling-2.0.0-Demo-4Players.gif)
+
 ## Platforms
 
 This has been tested and confirmed to be working on:
