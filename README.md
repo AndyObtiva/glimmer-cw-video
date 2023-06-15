@@ -95,18 +95,18 @@ Here are the options to pass in as hash arguments to the `video` widget keyword 
 
 ## Samples
 
-Run this command to list available Video samples:
+Run this command after installing the gem to list available Video samples via the Glimmer Meta-Sample (note that you would have to restart the Glimmer Meta-Sample after every run because of an unresolved issue):
 
 ```
-glimmer sample:list
+glimmer samples
 ```
 
 ### Hello, Video!
 
-Run:
+Run from Glimmer Meta-Sample or by cloning this project and executing:
 
 ```
-glimmer sample:run[hello_video]
+glimmer samples/video/hello_video.rb
 ```
 
 Glimmer Code (from [samples/video/hello_video.rb](samples/video/hello_video.rb)):
@@ -132,10 +132,10 @@ Glimmer App:
 
 ### Hello, Looped Video with Black Background!
 
-Run:
+Run from Glimmer Meta-Sample or by cloning this project and executing:
 
 ```
-glimmer sample:run[hello_looped_video_with_black_background]
+glimmer samples/video/hello_looped_video_with_black_background.rb
 ```
 
 Glimmer Code (from [samples/video/hello_looped_video_with_black_background.rb](samples/video/hello_looped_video_with_black_background.rb)):
@@ -161,10 +161,10 @@ Glimmer App:
 
 ### Hello, Video Observers!
 
-Run:
+Run from Glimmer Meta-Sample or by cloning this project and executing:
 
 ```
-glimmer sample:run[hello_video_observers]
+glimmer samples/video/hello_video_observers.rb
 ```
 
 Glimmer Code (from [samples/video/hello_video_observers.rb](samples/video/hello_video_observers.rb)):
