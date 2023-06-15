@@ -8,7 +8,7 @@
 
 ![Video Widget](images/glimmer-video-widget.png)
 
-Video is a [Glimmer Custom Widget](https://github.com/AndyObtiva/glimmer#custom-widget-gem) for playing videos via the `video` [Glimmer DSL](https://github.com/AndyObtiva/glimmer#glimmer-dsl-syntax) keyword.
+Video is a [Glimmer DSL for SWT Custom Widget](https://github.com/AndyObtiva/glimmer-dsl-swt/blob/master/docs/reference/GLIMMER_GUI_DSL_SYNTAX.md#custom-widgets) for playing videos via the `video` [Glimmer DSL](https://github.com/AndyObtiva/glimmer#glimmer-dsl-syntax) keyword.
 
 ## Platforms
 
@@ -18,9 +18,9 @@ This has been tested and confirmed to be working on:
 
 ## Pre-requisites
 
-- [Glimmer](https://github.com/AndyObtiva/glimmer) application, [Glimmer](https://github.com/AndyObtiva/glimmer) custom shell, or another [Glimmer](https://github.com/AndyObtiva/glimmer) custom widget
-- JRuby version required by Glimmer
-- Java version required by Glimmer
+- [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) application, [Glimmer DSL for SWT custom shell](https://github.com/AndyObtiva/glimmer-dsl-swt/blob/master/docs/reference/GLIMMER_GUI_DSL_SYNTAX.md#custom-shells), or another [Glimmer DSL for SWT custom widget](https://github.com/AndyObtiva/glimmer-dsl-swt/blob/master/docs/reference/GLIMMER_GUI_DSL_SYNTAX.md#custom-widgets)
+- [JRuby version required by Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt#pre-requisites)
+- [Java version required by Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt#pre-requisites)
 
 ## Setup
 
