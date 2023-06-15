@@ -26,7 +26,7 @@ This has been tested and confirmed to be working on:
 
 ### Glimmer Application
 
-Add the following to a Glimmer application `Gemfile`:
+Add the following to a [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) application `Gemfile`:
 
 ```ruby
 gem 'glimmer-cw-video', '1.1.0'
@@ -42,7 +42,7 @@ jruby -S bundle
 
 ### Glimmer Custom Shell or Glimmer Custom Widget
 
-When reusing video custom widget in a Glimmer custom shell or custom widget, you can follow the same steps for Glimmer application, and then add a require statement to your library file:
+When reusing the video custom widget in a [Glimmer DSL for SWT custom shell](https://github.com/AndyObtiva/glimmer-dsl-swt/blob/master/docs/reference/GLIMMER_GUI_DSL_SYNTAX.md#custom-shells) or [custom widget](https://github.com/AndyObtiva/glimmer-dsl-swt/blob/master/docs/reference/GLIMMER_GUI_DSL_SYNTAX.md#custom-widgets), you can follow the same steps for a [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) application, and then add a require statement to your library file:
 
 ```ruby
 require 'glimmer-cw-video'
