@@ -95,7 +95,7 @@ Here are the options to pass in as hash arguments to the `video` widget keyword 
 
 ## Samples
 
-Run this command after installing the gem to list available Video samples via the Glimmer Meta-Sample (note that you would have to restart the Glimmer Meta-Sample after every run because of an unresolved issue):
+Run this command after installing the gem to list available Video samples via the Glimmer Meta-Sample (note that you would have to restart the Glimmer Meta-Sample after every Video sample run because of an unresolved minor issue):
 
 ```
 glimmer samples
